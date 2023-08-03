@@ -1,0 +1,22 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": ">=16.8.0",
+    "pnpm": ">=8.6.0",
+    "yarn": ">=999.0.0",
+    "npm": ">=999.0.0"
+  },
+  "scripts": {
+    "dev": "pnpm --parallel  dev",
+    "dev:wagmi": "pnpm --filter wagmi dev",
+    "dev:rainbowkit": "pnpm --filter rainbowkit dev",
+    "dev:connectkit": "pnpm --filter connectkit dev",
+    "dev:web3-onboard": "pnpm --filter web3-onboard dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

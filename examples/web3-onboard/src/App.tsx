@@ -1,39 +1,22 @@
-import reactLogo from "./assets/react.svg";
-import "./App.css";
+// import "./App.css";
 
 import { useConnectWallet } from "@web3-onboard/react";
 
 function App() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [_, connect] = useConnectWallet();
+  const [s, connect] = useConnectWallet();
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://onboard.blocknative.com" target="_blank">
-          <img
-            src="/blocknative.svg"
-            className="logo blocknative"
-            alt="Blocknative logo"
-          />
-        </a>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Web3-Onboard + Vite + React</h1>
-      <div className="card">
-        <button onClick={() => connect()}>connect</button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Blocknative, Vite and React logos to learn more
-      </p>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        paddingTop: "2rem",
+      }}
+    >
+      <button onClick={() => connect()} disabled={!!s.wallet}>
+        {s.wallet ? "connected" : "connect"}
+      </button>
     </div>
   );
 }

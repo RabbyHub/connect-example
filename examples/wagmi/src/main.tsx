@@ -4,6 +4,7 @@ import { WagmiConfig, createConfig, configureChains, mainnet } from "wagmi";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
 import { InjectedConnector } from "wagmi/connectors/injected";
+import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 
 import App from "./App.tsx";
 import "./index.css";
@@ -19,6 +20,8 @@ const { chains, publicClient, webSocketPublicClient } = configureChains(
 const config = createConfig({
   autoConnect: true,
   connectors: [
+    new MetaMaskConnector({ chains }),
+    // Add injected connector for Rabby Wallet
     new InjectedConnector({
       chains,
       options: {

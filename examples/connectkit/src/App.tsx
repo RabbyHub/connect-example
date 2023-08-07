@@ -5,8 +5,8 @@ function App() {
     <div
       style={{
         display: "flex",
-        alignItems: "center",
         justifyContent: "center",
+        paddingTop: "3rem",
         height: "100vh",
       }}
     >
